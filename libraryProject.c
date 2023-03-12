@@ -29,10 +29,10 @@ int kisiSorgula(kisiBilgileri *uyeListesi,int ID){
 	int i;
 	for(i=0;i<MAX_KISI_SAYISI;i++){
 		if(uyeListesi[i].kutuphaneID==ID){
-			return ID;//bu ID daha önce kullanýldý.
+			return ID;//bu ID daha Ã¶nce kullanÄ±ldÄ±.
 		}
 	}
-	return -1;//bu ID daha önce hiç kullanýlmadý.	
+	return -1;//bu ID daha Ã¶nce hiÃ§ kullanÄ±lmadÄ±.	
 }
 
 int kayitOl(kisiBilgileri *uyeListesi){
@@ -40,7 +40,7 @@ int kayitOl(kisiBilgileri *uyeListesi){
 	int i,kayitYapilacakIndex,ID;
 	char kisiAdi[20],kisiSoyadi[20],ch;
 	
-	srand(time(NULL));//ID FARKLILIÐI ÝÇÝN
+	srand(time(NULL));//ID FARKLILIÄžI Ä°Ã‡Ä°N
 	for(i=0;i<MAX_KISI_SAYISI;i++){
 		if(uyeListesi[i].kutuphaneID==0){
 			kayitYapilacakIndex=i;
@@ -185,7 +185,7 @@ int girisYap(kisiBilgileri *uyeListesi){
 			return -1;//sifre yanlis girildi.giris basarisiz.	
 		}	
 	}
-	return -2;//O ID DEÐERÝNE AÝT KÝMSE BULUNAMADI.	
+	return -2;//O ID DEÄžERÄ°NE AÄ°T KÄ°MSE BULUNAMADI.	
 }
 
 void uyeleriAktar(kisiBilgileri *uyeListesi){
@@ -287,10 +287,10 @@ int main(void){
 	kitaplik=(kitapBilgileri*)calloc(MAX_KITAP_SAYISI,sizeof(kitapBilgileri));
 	uyeListesi=(kisiBilgileri*)calloc(MAX_KISI_SAYISI,sizeof(kisiBilgileri));
 	
-	uyeleriAktar(uyeListesi);//kitaplik ve üyelistesi arraylerine aktarým saðlandý.
+	uyeleriAktar(uyeListesi);//kitaplik ve Ã¼yelistesi arraylerine aktarÄ±m saÄŸlandÄ±.
 	kitaplariAktar(kitaplik);
 	
-	///KAYIT OL-GÝRÝÞ YAP
+	///KAYIT OL-GÄ°RÄ°Åž YAP
 	printf("\t\t\tMerhaba,Kutuphane sistemimize hosgeldiniz\n");
 	printf("1.Sisteme kayit  olmak istiyorsaniz 'K'\n2.Sisteme giris yapmak istiyorsaniz 'G' tuslayiniz:");
 	fflush(stdin);
@@ -314,7 +314,7 @@ int main(void){
 		exit(1);
 	}
 	
-	/////UYENIN YETKÝSÝNÝ BELÝRLEME
+	/////UYENIN YETKÄ°SÄ°NÄ° BELÄ°RLEME
 	if(girisDurumu==1){
 		uyeYetkisi=calisan;
 	}
@@ -338,7 +338,7 @@ int main(void){
 					break;
 				case 'Q':
 				case 'q':
-					kitaplariYedekle(kitaplik);//cikis yapilirken, tüm kitaplar ve üye bilgileri dosyaya kaydediliyor.
+					kitaplariYedekle(kitaplik);//cikis yapilirken, tÃ¼m kitaplar ve Ã¼ye bilgileri dosyaya kaydediliyor.
 					uyeleriYedekle(uyeListesi);
 					printf("Cikis yapiliyor...");
 					break;
